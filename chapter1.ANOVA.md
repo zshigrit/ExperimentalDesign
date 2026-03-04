@@ -36,6 +36,9 @@ If $X^{T}X$ is **not invertible**, then:
 
 ### Projection matrix
 
+### Estimable functions
+The estimable functions are linear combinations of the rows of Xβ, e.g., ρ′Xβ.
+
 ## Implementation
 ## Examples
 ## Practice
