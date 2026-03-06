@@ -41,15 +41,13 @@ The estimable functions are linear combinations of the rows of Xβ, e.g., ρ′X
 
 ### Test statistics
 
-$$
-F=
-\frac{SS_{\text{trt}}/(a-1)}
-{SS_E/\big(a(n-1)\big)}
-=
-\frac{\chi^2_{a-1}/(a-1)}
-{\chi^2_{a(n-1)}/\big(a(n-1)\big)}
-$$
 
+$$
+F = \frac{SS_{\text{trt}}/(a-1)}{SS_E/\big(a(n-1)\big)}
+
+\sim
+\frac{\chi^2_{a-1}/(a-1)}{\chi^2_{a(n-1)}/\big(a(n-1)\big)}
+$$
 <br><br>
 
 $$
@@ -63,18 +61,10 @@ $$
 Therefore,
 
 $$
-t=
-\frac{
-\displaystyle 
-\frac{\bar{Y}_{i\cdot} - \mu_i}{\sqrt{\sigma^2/n}}
-}{
-\displaystyle 
-\sqrt{\frac{SSE/\sigma^2}{a(n-1)}}
-}
-=
-\frac{\bar{Y}_{i\cdot} - \mu_i}{\sqrt{MSE/n}}
-\sim t_{a(n-1)}.
+t=\frac{\displaystyle \frac{\bar{Y}_{i\cdot} - \mu_i}{\sqrt{\sigma^2/n}}}{\displaystyle \sqrt{\frac{SSE/\sigma^2}{a(n-1)}}}
+=\frac{\bar{Y}_{i\cdot} - \mu_i}{\sqrt{MSE/n}}\sim t_{a(n-1)}.
 $$
+
 <br>
 
 The **Wald** statistic is
