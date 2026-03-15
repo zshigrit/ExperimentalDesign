@@ -2,15 +2,9 @@
 ## Theories
 
 **The law of total variance for ANOVA**
-
-$$
-\text{The law of total variance for ANOVA}
-$$
-
 $$
 Var(y)=E(Var(y\mid x))+Var(E(y\mid x))
 $$
-
 Note:
 
 - it is $y$, not $y_{ij}$
@@ -47,7 +41,7 @@ n\sum_i (\bar y_{i.}-\bar y_{..})^2
 $$
 
 $$
-\therefore\quad SS_{\text{total}}=SS_E+SS_{\text{treatment}}
+SS_{\text{total}}=SS_E+SS_{\text{treatment}}
 $$
 
 ### Effect Model
