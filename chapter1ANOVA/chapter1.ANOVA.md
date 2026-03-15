@@ -5,14 +5,6 @@
 $$
 Var(y)=E(Var(y\mid x))+Var(E(y\mid x))
 $$
-Note:
-
-- it is $y$, not $y_{ij}$
-- neither $\bar y$
-
-$$
-x=1,2,3,\dots,a
-$$
 
 $$
 Var(y)=\frac{\sum_i\sum_j (y_{ij}-\bar y_{..})^2}{an}
