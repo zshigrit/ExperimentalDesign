@@ -3,51 +3,33 @@
 
 **The law of total variance for ANOVA**
 ## The law of total variance for ANOVA
+## The law of total variance for ANOVA
 
 $$
 Var(y)=E(Var(y \mid x))+Var(E(y \mid x))
-$$
-
-Note:
-
-- it is $y$, not $y_{ij}$
-- neither $\bar y$
-
-$$
-x=1,2,3,\dots,a
 $$
 
 $$
 Var(y)=\frac{\sum_i\sum_j (y_{ij}-\bar y_{..})^2}{an}
 $$
 
-
 $$
-E(Var(y \mid x))
-=
-\frac{\sum_i \left[\sum_j (y_{ij}-\bar y_{i.})^2/n\right]}{a}
-=
-\frac{\sum_i\sum_j (y_{ij}-\bar y_{i.})^2}{an}
-$$
-
-
-$$
-Var(E(y \mid x))
-=
-\frac{\sum_i (\bar y_{i.}-\bar y_{..})^2}{a}
+E(Var(y \mid x)) = \frac{\sum_i \left[\sum_j (y_{ij}-\bar y_{i.})^2/n\right]}{a} = \frac{\sum_i\sum_j (y_{ij}-\bar y_{i.})^2}{an}
 $$
 
 $$
-\sum_i\sum_j (y_{ij}-\bar y_{..})^2
-=
-\sum_i\sum_j (y_{ij}-\bar y_{i.})^2
-+
-n\sum_i (\bar y_{i.}-\bar y_{..})^2
+Var(E(y \mid x)) = \frac{\sum_i (\bar y_{i.}-\bar y_{..})^2}{a}
+$$
+
+$$
+\sum_i\sum_j (y_{ij}-\bar y_{..})^2 = \sum_i\sum_j (y_{ij}-\bar y_{i.})^2 + n\sum_i (\bar y_{i.}-\bar y_{..})^2
 $$
 
 $$
 SS_{\text{total}}=SS_E+SS_{\text{treatment}}
 $$
+
+
 ### Effect Model
 
 $$
