@@ -4,7 +4,11 @@
 **The law of total variance for ANOVA**
 
 $$
-Var(y)=E\!\big(Var(y\mid x)\big)+Var\!\big(E(y\mid x)\big)
+\text{The law of total variance for ANOVA}
+$$
+
+$$
+Var(y)=E(Var(y\mid x))+Var(E(y\mid x))
 $$
 
 Note:
@@ -21,7 +25,7 @@ Var(y)=\frac{\sum_i\sum_j (y_{ij}-\bar y_{..})^2}{an}
 $$
 
 $$
-E\!\big(Var(y\mid x)\big)
+E(Var(y\mid x))
 =
 \frac{\sum_i \left[\sum_j (y_{ij}-\bar y_{i.})^2/n\right]}{a}
 =
@@ -29,7 +33,7 @@ E\!\big(Var(y\mid x)\big)
 $$
 
 $$
-Var\!\big(E(y\mid x)\big)
+Var(E(y\mid x))
 =
 \frac{\sum_i (\bar y_{i.}-\bar y_{..})^2}{a}
 $$
