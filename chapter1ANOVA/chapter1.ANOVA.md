@@ -1,5 +1,52 @@
 # ANalysis Of VAriance (ANOVA)
 ## Theories
+
+**The law of total variance for ANOVA**
+
+
+$$
+\operatorname{Var}(y)=E\!\big(\operatorname{Var}(y\mid x)\big)+\operatorname{Var}\!\big(E(y\mid x)\big)
+$$
+
+Note:
+
+- it is $y$, not $y_{ij}$ $Var(y_{ij})=Var(y|X=i)$
+- neither $\bar y_{..}$
+
+$$
+x=1,2,3,\dots,a
+$$
+
+$$
+\operatorname{Var}(y)=\frac{\sum_i\sum_j (y_{ij}-\bar y_{..})^2}{an}
+$$
+
+$$
+E\!\big(\operatorname{Var}(y\mid x)\big)
+=
+\frac{\sum_i \left[\sum_j (y_{ij}-\bar y_{i.})^2/n\right]}{a}
+=
+\frac{\sum_i\sum_j (y_{ij}-\bar y_{i.})^2}{an}
+$$
+
+$$
+\operatorname{Var}\!\big(E(y\mid x)\big)
+=
+\frac{\sum_i (\bar y_{i.}-\bar y_{..})^2}{a}
+$$
+
+$$
+\sum_i\sum_j (y_{ij}-\bar y_{..})^2
+=
+\sum_i\sum_j (y_{ij}-\bar y_{i.})^2
++
+n\sum_i (\bar y_{i.}-\bar y_{..})^2
+$$
+
+$$
+\therefore\quad SS_{\text{total}}=SS_E+SS_{\text{treatment}}
+$$
+
 ### Effect Model
 
 $$
@@ -265,8 +312,142 @@ A single contrast corresponds to a **1-degree-of-freedom F test**:
 $$
 F = \frac{SS_C}{MSE}.
 $$
-
 This tests whether the linear combination of group means defined by the contrast differs from zero.
+### Residual 
+#### (Matrix)
+
+$$
+\mathbf{e} = \mathbf{y} - X\hat{\beta}
+= \mathbf{y} - M\mathbf{y}
+= (I - M)\mathbf{y}
+$$
+
+$$
+E(\mathbf{e}) = (I - M)E(\mathbf{y})
+= (I - M)(X\beta)
+= \mathbf{0}
+$$
+
+$$
+\mathrm{Var}(\mathbf{e})
+= (I - M)\,\mathrm{Var}(\mathbf{y})\,(I - M)
+= (I - M)(\sigma^2 I)(I - M)
+$$
+
+$$
+= \sigma^2 (I - M)
+= \sigma^2 \, \text{blkdiag}\!\left(I_n - \frac{1}{n}U_n\right)
+$$
+
+where
+
+$$
+U_n = \mathbf{1}_n \mathbf{1}_n^{T}
+$$
+
+$$
+\mathbf{e} \sim MVN\!\left(\mathbf{0},\; \sigma^2 (I - M)\right)
+$$
+
+**Note**
+
+$$
+\lim_{n \to \infty} \mathrm{Var}(\mathbf{e}) = \sigma^2 I
+$$
+
+#### scalar
+$$
+\mathrm{Var}(e_{ij})
+= \mathrm{Var}(Y_{ij} - \bar{Y}_{i\cdot})
+= \mathrm{Var}(Y_{ij}) + \mathrm{Var}(\bar{Y}_{i\cdot}) - 2\,\mathrm{Cov}(Y_{ij}, \bar{Y}_{i\cdot})
+$$
+
+$$
+= \sigma^2 + \frac{1}{n^2}\sum_{k=1}^{n} \mathrm{Var}(Y_{ik})
+- 2\,\mathrm{Cov}\!\left(Y_{ij}, \frac{1}{n}\sum_{k=1}^{n} Y_{ik}\right)
+$$
+
+$$
+= \sigma^2 + \frac{\sigma^2}{n}
+- \frac{2}{n}\sum_{k=1}^{n} \mathrm{Cov}(Y_{ij}, Y_{ik})
+$$
+
+Note:
+
+$$
+\mathrm{Cov}(Y_{ij}, Y_{ik}) = 0 \quad \text{unless } k=j
+$$
+
+Thus
+
+$$
+= \sigma^2 + \frac{\sigma^2}{n}
+- \frac{2}{n}\mathrm{Cov}(Y_{ij}, Y_{ij})
+$$
+
+$$
+= \sigma^2 + \frac{\sigma^2}{n} - \frac{2}{n}\sigma^2
+$$
+
+$$
+= \sigma^2\left(1 - \frac{1}{n}\right)
+$$
+
+Finally,
+
+$$
+\lim_{n \to \infty} \mathrm{Var}(e_{ij}) = \sigma^2
+$$
+
+$$
+\mathrm{Cov}(e_{ij}, e_{k\ell})
+= \mathrm{Cov}(Y_{ij}-\bar Y_{i\cdot},\, Y_{k\ell}-\bar Y_{k\cdot})
+$$
+
+$$
+= \mathrm{Cov}(Y_{ij}, Y_{k\ell})
+- \mathrm{Cov}(Y_{ij}, \bar Y_{k\cdot})
+- \mathrm{Cov}(Y_{k\ell}, \bar Y_{i\cdot})
++ \mathrm{Cov}(\bar Y_{i\cdot}, \bar Y_{k\cdot})
+$$
+
+**(i) If $i \neq k$:**
+
+$$
+\mathrm{Cov}(e_{ij}, e_{k\ell}) = 0
+$$
+
+**(ii) If \(i = k\) and \(j = l\):**
+
+$$
+\mathrm{Cov}(e_{ij}, e_{ij})
+= \mathrm{Var}(e_{ij})
+= \sigma^2\left(1 - \frac{1}{n}\right)
+$$
+
+**(iii) If \(i = k\) and \($j \neq \ell$\):**
+
+$$
+\mathrm{Cov}(e_{ij}, e_{i\ell})
+= 0
+- \mathrm{Cov}\!\left(Y_{ij}, \frac{1}{n}Y_{ij}\right)
+- \mathrm{Cov}\!\left(Y_{i\ell}, \frac{1}{n}Y_{i\ell}\right)
++ \frac{1}{n^2}\sum_{m=1}^{n} \mathrm{Cov}(Y_{im}, Y_{im})
+$$
+
+$$
+= -\frac{1}{n}\sigma^2 - \frac{1}{n}\sigma^2 + \frac{1}{n}\sigma^2
+$$
+
+$$
+= -\frac{\sigma^2}{n}
+$$
+
+**Note**
+
+$$
+\text{As } n \to \infty,\; e_{ij} \text{ and } e_{i\ell} \text{ become uncorrelated.}
+$$
 ---
 ## Implementation
 ## Examples
