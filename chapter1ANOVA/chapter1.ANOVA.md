@@ -3,9 +3,9 @@
 
 **The law of total variance for ANOVA**
 
-$$
+```math
 Var(y)=E(Var(y \mid x))+Var(E(y \mid x))
-$$
+```
 
 Note: it is not $y_{i,j}$ This is conditional on x=i; neither $\bar y..$
 
