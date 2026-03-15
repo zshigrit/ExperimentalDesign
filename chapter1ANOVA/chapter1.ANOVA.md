@@ -3,26 +3,25 @@
 
 **The law of total variance for ANOVA**
 
-
 $$
-\operatorname{Var}(y)=E\!\big(\operatorname{Var}(y\mid x)\big)+\operatorname{Var}\!\big(E(y\mid x)\big)
+Var(y)=E\!\big(Var(y\mid x)\big)+Var\!\big(E(y\mid x)\big)
 $$
 
 Note:
 
-- it is $y$, not $y_{ij}$ $Var(y_{ij})=Var(y|X=i)$
-- neither $\bar y_{..}$
+- it is $y$, not $y_{ij}$
+- neither $\bar y$
 
 $$
 x=1,2,3,\dots,a
 $$
 
 $$
-\operatorname{Var}(y)=\frac{\sum_i\sum_j (y_{ij}-\bar y_{..})^2}{an}
+Var(y)=\frac{\sum_i\sum_j (y_{ij}-\bar y_{..})^2}{an}
 $$
 
 $$
-E\!\big(\operatorname{Var}(y\mid x)\big)
+E\!\big(Var(y\mid x)\big)
 =
 \frac{\sum_i \left[\sum_j (y_{ij}-\bar y_{i.})^2/n\right]}{a}
 =
@@ -30,7 +29,7 @@ E\!\big(\operatorname{Var}(y\mid x)\big)
 $$
 
 $$
-\operatorname{Var}\!\big(E(y\mid x)\big)
+Var\!\big(E(y\mid x)\big)
 =
 \frac{\sum_i (\bar y_{i.}-\bar y_{..})^2}{a}
 $$
