@@ -2,12 +2,11 @@
 ## Theories
 
 **The law of total variance for ANOVA**
-## The law of total variance for ANOVA
-## The law of total variance for ANOVA
 
 $$
 Var(y)=E(Var(y \mid x))+Var(E(y \mid x))
 $$
+Note: it is not $y_{i,j}$ This is conditional on x=i; neither $\bar y..$
 
 $$
 Var(y)=\frac{\sum_i\sum_j (y_{ij}-\bar y_{..})^2}{an}
