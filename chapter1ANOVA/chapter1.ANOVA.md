@@ -29,6 +29,7 @@ $$
 SS_{\text{total}}=SS_E+SS_{\text{treatment}}
 $$
 
+---
 
 ### Effect Model
 
@@ -126,6 +127,7 @@ Under the null hypothesis,
 $$
 W \sim \chi^2_q
 $$
+
 **The one-way ANOVA F-test is actually a Wald test for a set of linear restrictions on the treatment means.**
 
 
