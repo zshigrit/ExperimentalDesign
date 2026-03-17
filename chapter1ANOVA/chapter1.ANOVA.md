@@ -340,32 +340,27 @@ $$
 
 #### scalar
 $$
-\mathrm{Var}(e_{ij})
-= \mathrm{Var}(Y_{ij} - \bar{Y}_{i\cdot})
-= \mathrm{Var}(Y_{ij}) + \mathrm{Var}(\bar{Y}_{i\cdot}) - 2\,\mathrm{Cov}(Y_{ij}, \bar{Y}_{i\cdot})
+Var(e_{ij}) = Var(Y_{ij} - \bar{Y}_{i\cdot}) = Var(Y_{ij}) + Var(\bar{Y}_{i\cdot}) - 2\,Cov(Y_{ij}, \bar{Y}_{i\cdot})
 $$
 
 $$
-= \sigma^2 + \frac{1}{n^2}\sum_{k=1}^{n} \mathrm{Var}(Y_{ik})
-- 2\,\mathrm{Cov}\!\left(Y_{ij}, \frac{1}{n}\sum_{k=1}^{n} Y_{ik}\right)
+= \sigma^2 + \frac{1}{n^2}\sum_{k=1}^{n} Var(Y_{ik}) - 2\,Cov\left(Y_{ij}, \frac{1}{n}\sum_{k=1}^{n} Y_{ik}\right)
 $$
 
 $$
-= \sigma^2 + \frac{\sigma^2}{n}
-- \frac{2}{n}\sum_{k=1}^{n} \mathrm{Cov}(Y_{ij}, Y_{ik})
+= \sigma^2 + \frac{\sigma^2}{n} - \frac{2}{n}\sum_{k=1}^{n} Cov(Y_{ij}, Y_{ik})
 $$
 
 Note:
 
 $$
-\mathrm{Cov}(Y_{ij}, Y_{ik}) = 0 \quad \text{unless } k=j
+Cov(Y_{ij}, Y_{ik}) = 0 \quad \text{unless } k=j
 $$
 
-Thus
+Thus,
 
 $$
-= \sigma^2 + \frac{\sigma^2}{n}
-- \frac{2}{n}\mathrm{Cov}(Y_{ij}, Y_{ij})
+Var(e_{ij}) = \sigma^2 + \frac{\sigma^2}{n} - \frac{2}{n}Cov(Y_{ij}, Y_{ij})
 $$
 
 $$
@@ -379,43 +374,33 @@ $$
 Finally,
 
 $$
-\lim_{n \to \infty} \mathrm{Var}(e_{ij}) = \sigma^2
+\lim_{n \to \infty} Var(e_{ij}) = \sigma^2
 $$
 
 $$
-\mathrm{Cov}(e_{ij}, e_{k\ell})
-= \mathrm{Cov}(Y_{ij}-\bar Y_{i\cdot},\, Y_{k\ell}-\bar Y_{k\cdot})
+Cov(e_{ij}, e_{k\ell}) = Cov(Y_{ij}-\bar Y_{i\cdot},\, Y_{k\ell}-\bar Y_{k\cdot})
 $$
 
 $$
-= \mathrm{Cov}(Y_{ij}, Y_{k\ell})
-- \mathrm{Cov}(Y_{ij}, \bar Y_{k\cdot})
-- \mathrm{Cov}(Y_{k\ell}, \bar Y_{i\cdot})
-+ \mathrm{Cov}(\bar Y_{i\cdot}, \bar Y_{k\cdot})
+= Cov(Y_{ij}, Y_{k\ell}) - Cov(Y_{ij}, \bar Y_{k\cdot}) - Cov(Y_{k\ell}, \bar Y_{i\cdot}) + Cov(\bar Y_{i\cdot}, \bar Y_{k\cdot})
 $$
 
 **(i) If $i \neq k$:**
 
 $$
-\mathrm{Cov}(e_{ij}, e_{k\ell}) = 0
+Cov(e_{ij}, e_{k\ell}) = 0
 $$
 
-**(ii) If \(i = k\) and \(j = l\):**
+**(ii) If $i = k$ and $j = \ell$:**
 
 $$
-\mathrm{Cov}(e_{ij}, e_{ij})
-= \mathrm{Var}(e_{ij})
-= \sigma^2\left(1 - \frac{1}{n}\right)
+Cov(e_{ij}, e_{ij}) = Var(e_{ij}) = \sigma^2\left(1 - \frac{1}{n}\right)
 $$
 
-**(iii) If \(i = k\) and \($j \neq \ell$\):**
+**(iii) If $i = k$ and $j \neq \ell$:**
 
 $$
-\mathrm{Cov}(e_{ij}, e_{i\ell})
-= 0
-- \mathrm{Cov}\!\left(Y_{ij}, \frac{1}{n}Y_{ij}\right)
-- \mathrm{Cov}\!\left(Y_{i\ell}, \frac{1}{n}Y_{i\ell}\right)
-+ \frac{1}{n^2}\sum_{m=1}^{n} \mathrm{Cov}(Y_{im}, Y_{im})
+Cov(e_{ij}, e_{i\ell}) = 0 - Cov\left(Y_{ij}, \frac{1}{n}Y_{ij}\right) - Cov\left(Y_{i\ell}, \frac{1}{n}Y_{i\ell}\right) + \frac{1}{n^2}\sum_{m=1}^{n} Cov(Y_{im}, Y_{im})
 $$
 
 $$
@@ -431,7 +416,6 @@ $$
 $$
 \text{As } n \to \infty,\; e_{ij} \text{ and } e_{i\ell} \text{ become uncorrelated.}
 $$
----
 
 > It is important to realize that statistical significance
 is not the same as biological significance – with sufficient replication, it is possible to find
