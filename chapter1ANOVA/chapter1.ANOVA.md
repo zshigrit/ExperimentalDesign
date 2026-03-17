@@ -208,7 +208,9 @@ $$
 W \overset{H_0}{\sim} \chi^2_{p_2}, \qquad n \to \infty
 $$
 
+---
 ### Unbalanced case
+---
 ### Contrast
 - sum of squares for a contrast
 
@@ -295,8 +297,9 @@ Connection to the F Test
 A single contrast corresponds to a **1-degree-of-freedom F test**:
 
 $$
-F = \frac{SS_C}{MSE}.
+F = \frac{SS_C}{MSE}
 $$
+
 This tests whether the linear combination of group means defined by the contrast differs from zero.
 ### Residual 
 #### (Matrix)
