@@ -432,6 +432,13 @@ $$
 \text{As } n \to \infty,\; e_{ij} \text{ and } e_{i\ell} \text{ become uncorrelated.}
 $$
 ---
+
+> It is important to realize that statistical significance
+is not the same as biological significance – with sufficient replication, it is possible to find
+statistically significant differences that are too small to have any real biological ­ meaning –
+and so it is important to also consider the biological significance of any statistically signifi-
+cant comparison.
+
 ## Implementation
 ## Examples
 ## Practice
